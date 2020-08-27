@@ -1,0 +1,12 @@
+.git
+/node_modules
+/medias
+/gpx
+yarn.lock
+yarn-error.log
+package-lock.json
+
+.now
+.DS_store
+
+.vercel
