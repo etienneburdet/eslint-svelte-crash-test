@@ -8,7 +8,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin()
+  ],
   output: {
     filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'public')
@@ -26,21 +27,8 @@ module.exports = {
         test: /\.css$/i,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
       },
       {
         test: /\.(html|svelte)$/,
@@ -49,10 +37,7 @@ module.exports = {
           loader: 'svelte-loader',
           options: {
             emitCss: true,
-            dev: true,
-            preprocess: {
-              style: sass({}, { name: 'scss' })
-            }
+            dev: true
           }
         }
       }
